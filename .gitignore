@@ -1,0 +1,10 @@
+*.ipynb
+*.log
+*.zip
+
+.ipynb_checkpoints/
+rl/
+Reacher_Linux/
+Reacher_Linux20/
+temp/
+wip/
