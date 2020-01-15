@@ -14,6 +14,15 @@ The goal of agent is to maintain its position at the target location for as many
 ## Solution
 The environment is solved with DDPG algorithm _([Continuous control with deep reinforcement learning - arXiv:1509.02971 [cs.LG]](https://arxiv.org/pdf/1509.02971.pdf))_
 
+## DDPG Algorithm
+Deep Deterministic Policy Gradient (DDPG) is an algorithm which builds upon the Advantage Actor-Critic algorithm.
+In DDPG, agent concurrently learns a Q-function and a policy. 
+In the algorithm, we make use of the concept of REINFORCE where a reward > baseline (Average of all rewards starting from State S<sub>n</sub>) is considered a good action. As this is similar to the value function, it will help us to determine V<sub>n</sub>(S<sub>n</sub>)In DDPG, this is considered a Critic network. This critic network will be updated for every action.
+As part of the Actor network, we will be determining the Q function. Actor network will be updated based on the action.
+In DDPG, we also make use of a ReplayBuffer as in DQN. Actions will be determined based on random exploitaion from the ReplayBuffer. This will also help in avoiding the agent learning continuous sequential actions.
+We also make use of Ornstein–Uhlenbeck noise process so that the network can 'explore' the observation space for any actions. This is implemented by adding the OU Noise to action value returned from the network.
+As in the paper, we will be using Adam _([Adam: A Method for Stochastic Optimization - arXiv:1412.6980v9 [cs.LG]](https://arxiv.org/pdf/1412.6980.pdf))_ algorithm to optimize the networks.
+
 ### Model Architecture
 As per the DDPG paper, four networks were used:
     1. Actor (Local)
