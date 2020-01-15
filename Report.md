@@ -7,9 +7,9 @@ In this environment, a double-jointed arm can move to target locations.
 The goal of agent is to maintain its position at the target location for as many time steps as possible.
 
 ## Other environment info
-**Reward:** +0.1 _(For each step that the agent's hand is in the goal location.)_
-**Possible Actions:** 4 _(Every entry in the action vector should be a number between -1 and 1.)_
-**Available States:** 33 _(Corresponding to position, rotation, velocity, and angular velocities of the arm)_
+* **Reward:** +0.1 _(For each step that the agent's hand is in the goal location.)_
+* **Possible Actions:** 4 _(Every entry in the action vector should be a number between -1 and 1.)_
+* **Available States:** 33 _(Corresponding to position, rotation, velocity, and angular velocities of the arm)_
 
 ## Solution
 The environment is solved with DDPG algorithm _([Continuous control with deep reinforcement learning - arXiv:1509.02971 [cs.LG]](https://arxiv.org/pdf/1509.02971.pdf))_
